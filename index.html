@@ -1,135 +1,553 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Maya Balaji | Analytics Engineer</title>
-  <meta name="description" content="Maya Balaji — Analytics Engineer / Data Engineer focused on monitoring, pipelines, and data platforms." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Maya Balaji — Data & Analytics Engineer</title>
+  <meta name="description" content="Maya Balaji — Data & Analytics Engineer. Building reliable pipelines, monitoring systems, and analytics products." />
 
-  <style>
-    :root{
-      --bg:#fbfbfc;
-      --card:#ffffff;
-      --text:#0f172a;
-      --muted:#64748b;
-      --border:#e7e9ee;
-      --chip:#eef2ff;
-      --chipText:#3730a3;
-      --accent:#22c55e;
-      --shadow: 0 10px 30px rgba(2,6,23,.06);
-      --radius: 18px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: radial-gradient(1200px 600px at 20% -10%, rgba(34,197,94,.10), transparent 60%),
-                  radial-gradient(900px 500px at 90% 10%, rgba(99,102,241,.10), transparent 55%),
-                  var(--bg);
-      color:var(--text);
-    }
-    .wrap{max-width:1100px;margin:0 auto;padding:44px 18px 80px}
-    .topbar{display:flex;justify-content:space-between;align-items:center}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
-    .dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
-    .nav a{margin-left:14px;text-decoration:none;color:var(--muted);font-weight:600}
-    .nav a:hover{color:var(--text)}
-    h1{font-size:52px;margin:40px 0 12px}
-    .sub{color:var(--muted);max-width:60ch;font-size:18px}
-    .chips{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap}
-    .chip{padding:8px 12px;border-radius:999px;background:rgba(34,197,94,.12);font-weight:600}
-    .section{margin-top:60px}
-    h2{font-size:26px;margin-bottom:16px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow:var(--shadow);
-    }
-    .card h3{margin-top:0}
-    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-    .tag{background:var(--chip);color:var(--chipText);padding:6px 10px;border-radius:999px;font-size:12px}
-    footer{margin-top:80px;color:var(--muted);font-size:13px}
-  </style>
+  <style>
+    :root{
+      --bg0:#070A12;
+      --bg1:#0B1224;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.085);
+      --stroke: rgba(255,255,255,.10);
+      --text:#EAF0FF;
+      --muted: rgba(234,240,255,.72);
+      --muted2: rgba(234,240,255,.55);
+      --accent:#58F1A6;
+      --accent2:#54B6FF;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 22px;
+      --max: 1060px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 20% 5%, rgba(88,241,166,.18), transparent 60%),
+        radial-gradient(900px 600px at 80% 10%, rgba(84,182,255,.16), transparent 55%),
+        radial-gradient(900px 600px at 65% 80%, rgba(88,241,166,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow-x:hidden;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 80px}
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(7,10,18,.55);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .navin{
+      max-width:var(--max); margin:0 auto; padding:14px 18px;
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; font-weight:750; letter-spacing:.2px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 4px rgba(88,241,166,.12);
+    }
+    .links{display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    .link{
+      font-size:14px; color:var(--muted);
+      padding:8px 10px; border-radius:999px;
+    }
+    .link:hover{color:var(--text); background: rgba(255,255,255,.06)}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border-radius:999px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.10);
+      color:var(--text);
+      font-size:14px;
+    }
+    .pill:hover{border-color: rgba(88,241,166,.35)}
+    .pill .icon{opacity:.9}
+
+    header{padding:44px 0 18px}
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+    }
+    .title{
+      font-size:46px; line-height:1.05; margin:0 0 10px;
+      letter-spacing:-.6px;
+    }
+    .subtitle{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.5;
+      max-width:62ch;
+    }
+    .badgeRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .badge strong{color:var(--text); font-weight:650}
+
+    .card{
+      background: linear-gradient(180deg, var(--card), rgba(255,255,255,.03));
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+    }
+    .about{
+      padding:18px 18px 16px;
+      display:flex; flex-direction:column; gap:10px;
+      position:relative; overflow:hidden;
+    }
+    .about:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(700px 250px at 30% 0%, rgba(88,241,166,.18), transparent 60%),
+                  radial-gradient(700px 250px at 80% 10%, rgba(84,182,255,.16), transparent 60%);
+      opacity:.8;
+      pointer-events:none;
+    }
+    .about > *{position:relative}
+    .hlabel{
+      display:flex; align-items:center; gap:10px;
+      font-weight:750; letter-spacing:.2px;
+      margin:0; font-size:18px;
+    }
+    .spark{
+      width:10px; height:10px; border-radius:999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(88,241,166,.12);
+    }
+    .p{margin:0; color:var(--muted); line-height:1.6; font-size:14.5px}
+    .tiny{color:var(--muted2); font-size:13px; line-height:1.5}
+
+    section{padding:22px 0 0}
+    .secTitle{
+      margin:0 0 12px;
+      display:flex; align-items:center; gap:10px;
+      font-size:18px;
+      letter-spacing:.2px;
+    }
+    .codeGlyph{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      color: rgba(234,240,255,.75);
+      font-size:14px;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:14px;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+    }
+
+    .proj{
+      padding:16px;
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.035));
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: var(--radius2);
+      box-shadow: 0 18px 50px rgba(0,0,0,.35);
+      position:relative;
+      overflow:hidden;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .proj:hover{
+      transform: translateY(-2px);
+      border-color: rgba(88,241,166,.28);
+      background: linear-gradient(180deg, rgba(255,255,255,.085), rgba(255,255,255,.04));
+    }
+    .projTop{
+      display:flex; justify-content:space-between; align-items:flex-start; gap:10px;
+      margin-bottom:10px;
+    }
+    .star{
+      width:18px; height:18px; border-radius:6px;
+      display:grid; place-items:center;
+      background: rgba(88,241,166,.12);
+      border:1px solid rgba(88,241,166,.20);
+      flex:0 0 auto;
+      margin-top:2px;
+    }
+    .featured{
+      font-size:12px;
+      color: rgba(234,240,255,.78);
+      background: rgba(88,241,166,.12);
+      border:1px solid rgba(88,241,166,.22);
+      padding:6px 10px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+    .proj h3{margin:0; font-size:18px; letter-spacing:-.2px}
+    .proj .desc{margin:8px 0 0; color:var(--muted); font-size:14px; line-height:1.6}
+    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+    .tag{
+      font-size:12px;
+      color: rgba(234,240,255,.75);
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .proj .actions{display:flex; gap:10px; margin-top:14px; flex-wrap:wrap}
+    .btn{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:9px 12px;
+      border-radius:12px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      color: var(--text);
+      font-size:13.5px;
+    }
+    .btn:hover{border-color: rgba(84,182,255,.30)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(88,241,166,.20), rgba(84,182,255,.18));
+      border-color: rgba(88,241,166,.26);
+    }
+
+    .exp{
+      padding:16px;
+      border-radius: var(--radius2);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.11);
+      box-shadow: 0 18px 50px rgba(0,0,0,.33);
+    }
+    .expHead{
+      display:flex; justify-content:space-between; align-items:flex-start; gap:12px;
+      margin-bottom:10px;
+    }
+    .role{font-weight:800; margin:0; font-size:16px}
+    .org{margin:2px 0 0; color:var(--muted); font-size:13.5px}
+    .date{color:var(--muted2); font-size:13px; white-space:nowrap}
+    ul{margin:10px 0 0 18px; color:var(--muted); line-height:1.6; font-size:14px}
+    li{margin:6px 0}
+
+    .next{
+      padding:18px;
+      border-radius: 22px;
+      border:1px solid rgba(255,255,255,.12);
+      background: linear-gradient(135deg, rgba(88,241,166,.18), rgba(84,182,255,.22));
+      box-shadow: 0 18px 60px rgba(0,0,0,.30);
+    }
+    .next p{color: rgba(234,240,255,.82)}
+    .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:12px}
+    .chip{
+      font-size:12px;
+      color: rgba(255,255,255,.85);
+      padding:7px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.18);
+    }
+
+    footer{
+      margin-top:36px;
+      padding-top:22px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: rgba(234,240,255,.65);
+      font-size:13px;
+      display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    }
+
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+  </style>
 </head>
 
 <body>
-  <div class="wrap">
+  <div class="nav">
+    <div class="navin">
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Data & Analytics Engineer</span>
+      </div>
 
-    <div class="topbar">
-      <div class="brand">
-        <div class="dot"></div>
-        Maya Balaji
-      </div>
-      <div class="nav">
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="https://github.com/mayabalaji" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/YOUR_LINK" target="_blank">LinkedIn</a>
-      </div>
-    </div>
+      <div class="links">
+        <a class="link" href="#about">About</a>
+        <a class="link" href="#projects">Projects</a>
+        <a class="link" href="#experience">Experience</a>
+        <a class="link" href="#future">Future</a>
+        <a class="link" href="#contact">Contact</a>
 
-    <h1>Analytics Engineer / Data Engineer</h1>
-    <p class="sub">
-      I design and build production-ready data pipelines, monitoring systems, and analytics platforms
-      that make data reliable, observable, and actionable.
-    </p>
+        <!-- TODO: Put your resume PDF at /resume/Maya_Balaji_Resume.pdf -->
+        <a class="pill" href="resume/Maya_Balaji_Resume.pdf" target="_blank" rel="noopener">
+          <span class="icon">📄</span> View Resume
+        </a>
+      </div>
+    </div>
+  </div>
 
-    <div class="chips">
-      <div class="chip">Python</div>
-      <div class="chip">SQL</div>
-      <div class="chip">REST APIs</div>
-      <div class="chip">Informatica IICS</div>
-      <div class="chip">AWS (Aurora, IAM)</div>
-      <div class="chip">Power BI</div>
-    </div>
+  <div class="wrap">
+    <header>
+      <div class="hero">
+        <div>
+          <h1 class="title">Maya Balaji</h1>
+          <p class="subtitle">
+            I build production-ready data pipelines, monitoring systems, and analytics dashboards that make operations
+            <strong>reliable</strong>, <strong>observable</strong>, and <strong>actionable</strong>.
+          </p>
 
-    <div class="section" id="projects">
-      <h2>Featured Project</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>TaskMonitor — Data Platform Monitoring</h3>
-          <p>
-            Built an end-to-end monitoring system to extract Informatica IICS task execution metadata
-            via REST APIs, store historical runs in Aurora MySQL, and visualize failures, runtimes,
-            and SLA breaches in Power BI.
-          </p>
-          <div class="tags">
-            <div class="tag">Python</div>
-            <div class="tag">IICS API</div>
-            <div class="tag">Aurora MySQL</div>
-            <div class="tag">Power BI</div>
-          </div>
-        </div>
-      </div>
-    </div>
+          <div class="badgeRow">
+            <span class="badge"><strong>Python</strong> • APIs • automation</span>
+            <span class="badge"><strong>SQL</strong> • modeling • quality checks</span>
+            <span class="badge"><strong>AWS</strong> • Aurora/MySQL • IAM</span>
+            <span class="badge"><strong>Informatica IICS</strong> • task monitoring</span>
+            <span class="badge"><strong>Power BI</strong> • DAX • KPI design</span>
+          </div>
+        </div>
 
-    <div class="section" id="experience">
-      <h2>Experience Snapshot</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Comerica Bank — Data Engineering Rotation</h3>
-          <p>
-            Designed and deployed production-grade pipelines for task monitoring, SLA alerting,
-            and analytics across DEV/QA/PROD environments.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Microsoft — Program Manager / Data Analyst</h3>
-          <p>
-            Led data-driven initiatives, dashboards, and operational analytics supporting
-            large-scale partner and compliance programs.
-          </p>
-        </div>
-      </div>
-    </div>
+        <div id="about" class="card about">
+          <h2 class="hlabel"><span class="spark" aria-hidden="true"></span> About Me</h2>
+          <p class="p">
+            I’m an early-career Data & Analytics Engineer focused on pipeline reliability and operational visibility.
+            Recently, I built an end-to-end monitoring system for enterprise ETL workloads: extracting execution metadata
+            via REST APIs, storing historical runs in Aurora/MySQL, modeling for analysis, and shipping executive dashboards in Power BI.
+          </p>
+          <p class="tiny">
+            I care about engineering that’s pragmatic: clear metrics, strong data contracts, and dashboards people actually trust.
+          </p>
+        </div>
+      </div>
+    </header>
 
-    <footer>
-      © 2025 Maya Balaji · AWS Cloud Practitioner (in progress)
-    </footer>
+    <section id="projects">
+      <div class="secTitle">
+        <span class="codeGlyph">&lt;/&gt;</span>
+        <span>My Projects</span>
+      </div>
 
-  </div>
+      <div class="grid">
+        <!-- Project 1 -->
+        <article class="proj">
+          <div class="projTop">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div class="star" aria-hidden="true">★</div>
+              <div>
+                <h3>TaskMonitor — ETL Reliability & SLA Monitoring</h3>
+                <p class="desc">
+                  Built an end-to-end monitoring pipeline for Informatica IICS tasks: pulled execution metadata from REST APIs,
+                  wrote historical runs to Aurora MySQL, exposed datasets via a semantic layer, and delivered Power BI dashboards
+                  for failures, runtimes, success rate, and SLA breaches.
+                </p>
+              </div>
+            </div>
+            <div class="featured">Featured</div>
+          </div>
+
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">Aurora MySQL</span>
+            <span class="tag">Data Modeling</span>
+            <span class="tag">Power BI + DAX</span>
+            <span class="tag">Observability</span>
+          </div>
+
+          <div class="actions">
+            <!-- TODO: replace with your repo link -->
+            <a class="btn primary" href="https://github.com/Mayabalaji" target="_blank" rel="noopener">Repo</a>
+            <!-- TODO: replace with a case study page if you add one -->
+            <a class="btn" href="#contact">Request a walkthrough</a>
+          </div>
+        </article>
+
+        <!-- Project 2 (recommended for you) -->
+        <article class="proj">
+          <div class="projTop">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div class="star" aria-hidden="true">★</div>
+              <div>
+                <h3>SLA Alerting — Automated Notifications for Breaches</h3>
+                <p class="desc">
+                  Designed alert logic to detect failures and SLA breaches across multiple projects with different thresholds,
+                  routing notifications to the right teams and reducing time-to-triage with standardized “what happened / what to do next” context.
+                </p>
+              </div>
+            </div>
+            <div class="featured">Featured</div>
+          </div>
+
+          <div class="tags">
+            <span class="tag">Monitoring</span>
+            <span class="tag">Business Rules</span>
+            <span class="tag">Automation</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Incident Triage</span>
+          </div>
+
+          <div class="actions">
+            <a class="btn primary" href="https://github.com/Mayabalaji" target="_blank" rel="noopener">Repo</a>
+            <a class="btn" href="#contact">See design</a>
+          </div>
+        </article>
+
+        <!-- Project 3 (recommended portfolio project you can build quickly) -->
+        <article class="proj">
+          <div class="projTop">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div class="star" aria-hidden="true">★</div>
+              <div>
+                <h3>Behavioral Design App — Doomscroll Breaker</h3>
+                <p class="desc">
+                  Portfolio product: a small app that helps users interrupt doomscrolling using friction + rewards,
+                  with simple analytics instrumentation and experiments (A/B tests) to measure retention impact.
+                </p>
+              </div>
+            </div>
+            <div class="featured">Featured</div>
+          </div>
+
+          <div class="tags">
+            <span class="tag">Product Analytics</span>
+            <span class="tag">Experimentation</span>
+            <span class="tag">Behavior Design</span>
+            <span class="tag">Data Visualization</span>
+          </div>
+
+          <div class="actions">
+            <a class="btn primary" href="https://github.com/Mayabalaji" target="_blank" rel="noopener">Repo</a>
+            <a class="btn" href="#future">Roadmap</a>
+          </div>
+        </article>
+
+        <!-- Project 4 (optional - keep it if you want) -->
+        <article class="proj">
+          <div class="projTop">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div class="star" aria-hidden="true">☆</div>
+              <div>
+                <h3>Portfolio — Case Studies & Dashboards</h3>
+                <p class="desc">
+                  This site + writeups: concise case studies with architecture diagrams, data model screenshots, and KPI definitions.
+                  Built to be recruiter-friendly and fast to scan.
+                </p>
+              </div>
+            </div>
+            <div class="featured" style="opacity:.65">Optional</div>
+          </div>
+
+          <div class="tags">
+            <span class="tag">Writing</span>
+            <span class="tag">Storytelling</span>
+            <span class="tag">Architecture</span>
+          </div>
+
+          <div class="actions">
+            <a class="btn" href="#contact">Feedback welcome</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="secTitle">
+        <span class="codeGlyph">🧰</span>
+        <span>My Experience</span>
+      </div>
+
+      <div class="exp">
+        <div class="expHead">
+          <div>
+            <p class="role">Business Analyst — Technology Development Program (Data Engineering Rotation)</p>
+            <p class="org">Comerica Bank</p>
+          </div>
+          <div class="date">2024 – Present</div>
+        </div>
+
+        <ul>
+          <li>Built operational monitoring for enterprise ETL workloads (task execution, failures, runtimes, SLA breaches) to improve reliability.</li>
+          <li>Integrated REST API ingestion + database storage to create a historical dataset for trend analysis and repeat-offender detection.</li>
+          <li>Designed Power BI experiences for executive and deep-dive audiences with clear KPIs and drillthrough workflows.</li>
+        </ul>
+
+        <p class="tiny mono" style="margin-top:10px;">
+          Tech: Python • SQL • Informatica IICS • AWS (Aurora/MySQL, IAM) • Power BI (DAX)
+        </p>
+      </div>
+    </section>
+
+    <section id="future">
+      <div class="secTitle">
+        <span class="codeGlyph">🚀</span>
+        <span>What’s Next?</span>
+      </div>
+
+      <div class="next">
+        <p class="p">
+          I’m continuing to deepen my skills in data engineering + analytics engineering: building reliable pipelines,
+          stronger data models, and monitoring systems that make teams faster and calmer.
+        </p>
+        <p class="p" style="margin-top:10px;">
+          I’m especially interested in roles where I can combine <strong>systems thinking</strong>, <strong>data quality</strong>,
+          and <strong>product-style storytelling</strong> to drive measurable business outcomes.
+        </p>
+
+        <div class="chips">
+          <span class="chip">Data Engineering</span>
+          <span class="chip">Analytics Engineering</span>
+          <span class="chip">Observability</span>
+          <span class="chip">Product Analytics</span>
+          <span class="chip">Automation</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="secTitle">
+        <span class="codeGlyph">💬</span>
+        <span>Contact</span>
+      </div>
+
+      <div class="exp">
+        <p class="p" style="margin:0 0 12px;">
+          Happy to talk about data reliability, monitoring, dashboards, or portfolio builds.
+        </p>
+
+        <div class="actions">
+          <!-- TODO: replace with your email -->
+          <a class="btn primary" href="mailto:maya@example.com">✉️ Email</a>
+          <!-- TODO: replace with your LinkedIn -->
+          <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">in LinkedIn</a>
+          <a class="btn" href="https://github.com/Mayabalaji" target="_blank" rel="noopener">⌂ GitHub</a>
+        </div>
+
+        <p class="tiny" style="margin-top:12px;">(Replace the placeholder email + LinkedIn with yours.)</p>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> Maya Balaji</div>
+      <div class="mono">Built on GitHub Pages</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
